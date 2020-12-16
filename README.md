@@ -1,4 +1,5 @@
 # card-sim
+
 Card collection simulator
 
 https://card-sim.jnito.com/
@@ -20,3 +21,7 @@ firebase init hosting
 # Deploy
 firebase deploy
 ```
+
+## License
+
+MIT License.
