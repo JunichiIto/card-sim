@@ -1,6 +1,10 @@
 new Vue({
   el: '#app',
-  data: { items: [], totalCount: '55', unitPrice: 110 },
+  data: {
+    items: [],
+    totalCount: 55,
+    unitPrice: 110
+  },
   computed: {
     totalCost() {
       return this.totalCardCount * this.normalizedUnitPrice;
@@ -18,9 +22,8 @@ new Vue({
   },
   methods: {
     simulate() {
-      const rawResults = Opal.Simulator.$new().$simulate(parseInt(this.totalCount, 10));
-      const results = rawResults.map(r => JSON.parse(r.$to_json()))
-      this.items = results;
+      const results = Opal.Simulator.$new().$simulate(this.totalCount);
+      this.items = results.$to_n();
       scrollTo(0, 0);
     },
     formatResult(record) {
