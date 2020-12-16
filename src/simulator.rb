@@ -1,6 +1,5 @@
 require 'opal'
-require './lib/jquery.js'
-require 'opal-jquery'
+require 'native'
 
 class Simulator
   def simulate(total_count)
