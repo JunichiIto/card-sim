@@ -6,7 +6,7 @@ https://card-sim.jnito.com/
 ## Compile
 
 ```
-RUBYOPT="-ropal-jquery" be opal -Ilib --compile simulator.rb > dist/simulator.js
+RUBYOPT="-ropal-jquery" be opal -Ilib --compile src/simulator.rb > dist/simulator.js
 open dist/index.html
 ```
 
