@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return record.result ? `No.${record.this_time}をゲットした！` : `No.${record.this_time}がダブった...`;
       }
     },
-    mounted() {
+    created() {
       this.simulate();
     }
   })
