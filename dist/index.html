@@ -32,33 +32,35 @@
     <script src="app.js"></script>
   </head>
   <body>
-    <div class="container" id="app" v-cloak>
+    <div class="container">
       <h3>カード収集!!シミュレータ</h3>
-      <div class="input-container">
-        全
-        <select v-model="numberOfTypes" @change="simulate">
-          <option v-for="option in typeOptions" v-bind:value="option" v-bind:key="option">
-            {{ option }}
-          </option>
-        </select>
-        種類 / 1枚
-        <input type="number" min="0" max="1000" v-model="unitPrice" class="unit-price">
-        円
-      </div>
-      <p>全部集めるのに{{ this.countTotal }}枚 / {{ this.totalCost }}円かかりました。</p>
-      <div class="btn-container">
-        <button @click="simulate" class="btn btn-light">もう１回試す</button>
-      </div>
-      <table align="center">
-        <tr v-for="result in results">
-          <td class="text-right">{{ result.count_total }}回目</td>
-          <td>{{ formatFirstGet(result) }}</td>
-          <td>{{ formatMessage(result) }}</td>
-          <td class="text-right">{{ result.count_distinct }}/{{ numberOfTypes }}</td>
-        </tr>
-      </table>
-      <div class="btn-container">
-        <button @click="simulate" class="btn btn-light">もう１回試す</button>
+      <div id="app" v-cloak>
+        <div class="input-container">
+          全
+          <select v-model="numberOfTypes" @change="simulate">
+            <option v-for="option in typeOptions" v-bind:value="option" v-bind:key="option">
+              {{ option }}
+            </option>
+          </select>
+          種類 / 1枚
+          <input type="number" min="0" max="1000" v-model="unitPrice" class="unit-price">
+          円
+        </div>
+        <p>全部集めるのに{{ this.countTotal }}枚 / {{ this.totalCost }}円かかりました。</p>
+        <div class="btn-container">
+          <button @click="simulate" class="btn btn-light">もう１回試す</button>
+        </div>
+        <table align="center">
+          <tr v-for="result in results">
+            <td class="text-right">{{ result.count_total }}回目</td>
+            <td>{{ formatFirstGet(result) }}</td>
+            <td>{{ formatMessage(result) }}</td>
+            <td class="text-right">{{ result.count_distinct }}/{{ numberOfTypes }}</td>
+          </tr>
+        </table>
+        <div class="btn-container">
+          <button @click="simulate" class="btn btn-light">もう１回試す</button>
+        </div>
       </div>
     </div>
     <footer class="footer">
