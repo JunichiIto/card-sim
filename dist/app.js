@@ -23,8 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     },
     methods: {
       simulate() {
-        const results = Opal.Simulator.$simulate(this.totalCount).$to_n();
-        this.items = results;
+        this.items = Opal.Simulator.$simulate(this.totalCount).$to_n();
         scrollTo(0, 0);
       },
       formatResult(record) {
