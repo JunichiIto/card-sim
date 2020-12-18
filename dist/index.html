@@ -15,8 +15,8 @@
       <h3>カード収集!!シミュレータ</h3>
       <div class="total-container">
         全
-        <select v-model="totalCount" @change="simulate">
-          <option v-for="option in options" v-bind:value="option" v-bind:key="option">
+        <select v-model="numberOfTypes" @change="simulate">
+          <option v-for="option in typeOptions" v-bind:value="option" v-bind:key="option">
             {{ option }}
           </option>
         </select>
@@ -24,16 +24,16 @@
         <input type="number" min="0" max="1000" v-model="unitPrice" class="unit-price">
         円
       </div>
-      <p>全部集めるのに{{ this.totalCardCount }}枚 / {{ this.totalCost }}円かかりました。</p>
+      <p>全部集めるのに{{ this.countTotal }}枚 / {{ this.totalCost }}円かかりました。</p>
       <div class="btn-container">
         <button @click="simulate" class="btn btn-light">もう１回試す</button>
       </div>
       <table align="center">
-        <tr v-for="record in items">
-          <td class="text-right">{{ record.count }}回目</td>
-          <td>{{ formatResult(record) }}</td>
-          <td>{{ formatMessage(record) }}</td>
-          <td class="text-right">{{ record.current_count }}/{{ totalCount }}</td>
+        <tr v-for="result in results">
+          <td class="text-right">{{ result.count_total }}回目</td>
+          <td>{{ formatFirstGet(result) }}</td>
+          <td>{{ formatMessage(result) }}</td>
+          <td class="text-right">{{ result.count_distinct }}/{{ numberOfTypes }}</td>
         </tr>
       </table>
       <div class="btn-container">

@@ -2,18 +2,18 @@ document.addEventListener("DOMContentLoaded", function() {
   new Vue({
     el: '#app',
     data: {
-      items: [],
-      totalCount: 55,
+      results: [],
+      numberOfTypes: 55,
       unitPrice: 110
     },
     computed: {
       totalCost() {
-        return this.totalCardCount * this.normalizedUnitPrice;
+        return this.countTotal * this.normalizedUnitPrice;
       },
-      totalCardCount() {
-        return this.items.length;
+      countTotal() {
+        return this.results.length;
       },
-      options() {
+      typeOptions() {
         return [...Array(101).keys()];
       },
       normalizedUnitPrice() {
@@ -23,14 +23,14 @@ document.addEventListener("DOMContentLoaded", function() {
     },
     methods: {
       simulate() {
-        this.items = Opal.Simulator.$simulate(this.totalCount).$to_n();
+        this.results = Opal.Simulator.$simulate(this.numberOfTypes).$to_n();
         scrollTo(0, 0);
       },
-      formatResult(record) {
-        return record.result ? '😄' : '';
+      formatFirstGet(result) {
+        return result.first_get ? '😄' : '';
       },
-      formatMessage(record) {
-        return record.result ? `No.${record.this_time}をゲットした！` : `No.${record.this_time}がダブった...`;
+      formatMessage(result) {
+        return result.first_get ? `No.${result.you_get}をゲットした！` : `No.${result.you_get}がダブった...`;
       }
     },
     created() {
