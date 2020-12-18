@@ -1,0 +1,23 @@
+[v-cloak] {
+  display: none;
+}
+.container {
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+p {
+  margin: 10px 0;
+}
+h3, p, .input-container {
+  text-align: center;
+}
+.btn-container {
+  text-align: center;
+  margin: 15px 0;
+}
+.text-right {
+  text-align: right;
+}
+td {
+  padding: 0 3px;
+}

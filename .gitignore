@@ -1,0 +1,10 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.rvmrc
+config/heroku.yml
+.env
+.byebug_history
+.firebase/
+dist/simulator.js
