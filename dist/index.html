@@ -13,7 +13,7 @@
   <body>
     <div class="container" id="app" v-cloak>
       <h3>カード収集!!シミュレータ</h3>
-      <div class="total-container">
+      <div class="input-container">
         全
         <select v-model="numberOfTypes" @change="simulate">
           <option v-for="option in typeOptions" v-bind:value="option" v-bind:key="option">
