@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return this.results.length;
       },
       typeOptions() {
-        return [...Array(101).keys()];
+        return [...Array(101).keys()].filter(n => n > 0);
       },
       normalizedUnitPrice() {
         const n = parseInt(this.unitPrice, 10);
