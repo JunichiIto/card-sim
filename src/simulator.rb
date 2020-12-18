@@ -2,7 +2,7 @@ require 'opal'
 require 'native'
 
 class Simulator
-  def simulate(total_count)
+  def self.simulate(total_count)
     table = Hash.new(0)
     all_cards = [*1..total_count]
     results = []
